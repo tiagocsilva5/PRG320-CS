@@ -4,6 +4,7 @@ class Magazine : Item
 {
     private string issueNumber;
 
+    //encapsulation
     public string IssueNumber
     {
         get { return issueNumber; }
@@ -17,7 +18,7 @@ class Magazine : Item
         PublicationYear = publicationYear;
         IssueNumber = issueNumber;
     }
-
+    //polymorphism
     public override void DisplayInfo()
     {
         base.DisplayInfo();

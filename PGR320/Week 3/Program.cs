@@ -14,6 +14,7 @@ class Program
 
         while (running)
         {
+            // Exception handling
             try
             {
                 Console.WriteLine("---Welcome to Library System---");
@@ -23,8 +24,10 @@ class Program
                 Console.WriteLine("4. View Magazine 2 Info");
                 Console.WriteLine("5. Exit");
 
+                //get the input
                 string input = Console.ReadLine();
 
+                //handle input from user
                 switch (input)
                 {
                     case "1":
@@ -45,14 +48,15 @@ class Program
 
                     case "5":
                         Console.WriteLine("Exiting...");
-                        running = false;
+                        running = false; //exit loop
                         break;
                     default:
                         Console.WriteLine("Invalid option.");
                         break;
                 }
             }
-
+            
+            // Catching any unexpected exceptions
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred: {ex.Message}");
