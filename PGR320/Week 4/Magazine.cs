@@ -1,6 +1,6 @@
-/*using System;
+using System;
 
-class Magazine : Item
+class Magazine : LibraryItemBase
 {
     private string issueNumber;
 
@@ -26,4 +26,3 @@ class Magazine : Item
         Console.WriteLine("      ");
     }
 }
-*/

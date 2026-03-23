@@ -1,6 +1,6 @@
-/*using System;
+using System;
 
-class Item
+abstract class LibraryItemBase : ILibraryItem
 {
     private string title;
     private string publisher;
@@ -37,4 +37,3 @@ class Item
         Console.WriteLine("      ");
     }
 }
-*/

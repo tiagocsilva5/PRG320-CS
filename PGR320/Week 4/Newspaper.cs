@@ -1,32 +1,30 @@
-/*using System;
+using System;
 using System.Runtime.CompilerServices;
 
-class Book : Item
+class Newspaper : LibraryItemBase
 {
-    private string author;
+    private string date;
 
     //encapsulation
-    public string Author 
+    public string Date 
     {
-        get { return author; }
-        set { author = value; }
+        get { return date; }
+        set { date = value; }
     }
     //constructor
-    public Book(string title, string publisher, int publicationYear, string author)
+    public Newspaper(string title, string publisher, int publicationYear, string date)
     {
         Title = title;
         Publisher = publisher;
         PublicationYear = publicationYear;
-        Author = author;
+        Date = date;
     }
 
     //polymorphism
     public override void DisplayInfo()
     {
         base.DisplayInfo();
-        Console.WriteLine($"Author: {Author}");
+        Console.WriteLine($"Date: {Date}");
         Console.WriteLine("      ");
     }
 }
-
-*/

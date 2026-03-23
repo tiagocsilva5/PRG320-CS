@@ -1,7 +1,7 @@
-/*using System;
+using System;
 using System.Runtime.CompilerServices;
 
-class Book : Item
+class Book : LibraryItemBase
 {
     private string author;
 
@@ -28,5 +28,3 @@ class Book : Item
         Console.WriteLine("      ");
     }
 }
-
-*/
