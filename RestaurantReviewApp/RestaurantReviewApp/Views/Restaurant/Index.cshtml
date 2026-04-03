@@ -1,0 +1,34 @@
+@model List<RestaurantReviewApp.Models.Restaurant>
+
+<h2>Restaurants</h2>
+
+<a asp-action="Create">Add New Restaurant</a>
+
+<table class="table table-striped table-bordered mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Cuisine</th>
+            <th>Rating</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    @foreach (var r in Model)
+    {
+        <tr>
+            <td>@r.Name</td>
+            <td>@r.Location</td>
+            <td>@r.Cuisine</td>
+            <td>@r.Rating</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@r.Id">Details</a> |
+                <a asp-action="Edit" asp-route-id="@r.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@r.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

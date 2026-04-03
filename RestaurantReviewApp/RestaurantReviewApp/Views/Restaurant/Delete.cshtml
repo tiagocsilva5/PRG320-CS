@@ -1,0 +1,10 @@
+@model RestaurantReviewApp.Models.Restaurant
+
+<h2>Delete Restaurant</h2>
+
+<p>Are you sure you want to delete @Model.Name?</p>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Yes, Delete</button>
+</form>

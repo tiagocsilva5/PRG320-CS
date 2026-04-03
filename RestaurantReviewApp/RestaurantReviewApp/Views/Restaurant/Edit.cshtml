@@ -1,0 +1,21 @@
+@model RestaurantReviewApp.Models.Restaurant
+
+<h2>Edit Restaurant</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <label>Name:</label>
+    <input asp-for="Name" />
+
+    <label>Address:</label>
+    <input asp-for="Location" />
+
+    <label>Cuisine:</label>
+    <input asp-for="Cuisine" />
+
+    <label>Rating:</label>
+    <input asp-for="Rating" type="number" />
+
+    <button type="submit">Save</button>
+</form>
