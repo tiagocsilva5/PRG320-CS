@@ -1,0 +1,6 @@
+@page "/restaurants"
+@using RestaurantUI_Week6.Models
+
+<h1>Restaurants</h1>
+<RestaurantList Restaurants="@restaurants" />
+<RestaurantForm OnRestaurantAdded="@AddRestaurant" />

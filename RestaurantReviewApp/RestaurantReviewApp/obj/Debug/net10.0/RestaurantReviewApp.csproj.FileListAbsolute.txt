@@ -96,3 +96,7 @@ C:\Users\tiago_qr6vbzw\OneDrive\Documentos\GitHub\PRG320\RestaurantReviewApp\Res
 C:\Users\tiago_qr6vbzw\OneDrive\Documentos\GitHub\PRG320\RestaurantReviewApp\RestaurantReviewApp\obj\Debug\net10.0\RestaurantReviewApp.pdb
 C:\Users\tiago_qr6vbzw\OneDrive\Documentos\GitHub\PRG320\RestaurantReviewApp\RestaurantReviewApp\obj\Debug\net10.0\RestaurantReviewApp.genruntimeconfig.cache
 C:\Users\tiago_qr6vbzw\OneDrive\Documentos\GitHub\PRG320\RestaurantReviewApp\RestaurantReviewApp\obj\Debug\net10.0\ref\RestaurantReviewApp.dll
+C:\Users\tiago_qr6vbzw\OneDrive\Documentos\GitHub\PRG320\RestaurantReviewApp\RestaurantReviewApp\obj\Debug\net10.0\EmbeddedAttribute.cs
+C:\Users\tiago_qr6vbzw\OneDrive\Documentos\GitHub\PRG320\RestaurantReviewApp\RestaurantReviewApp\obj\Debug\net10.0\ValidatableTypeAttribute.cs
+C:\Users\tiago_qr6vbzw\OneDrive\Documentos\GitHub\PRG320\RestaurantReviewApp\RestaurantReviewApp\obj\Debug\net10.0\compressed\79u84p2ul3-{0}-ax6tuj8tun-ax6tuj8tun.gz
+C:\Users\tiago_qr6vbzw\OneDrive\Documentos\GitHub\PRG320\RestaurantReviewApp\RestaurantReviewApp\obj\Debug\net10.0\compressed\iw4ykjextc-{0}-zr4b1gdhaw-zr4b1gdhaw.gz

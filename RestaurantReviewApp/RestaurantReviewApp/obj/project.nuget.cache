@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "UR9uPtzopZc=",
+  "dgSpecHash": "eIpolYQqmwM=",
   "success": true,
   "projectFilePath": "C:\\Users\\tiago_qr6vbzw\\OneDrive\\Documentos\\GitHub\\PRG320\\RestaurantReviewApp\\RestaurantReviewApp\\RestaurantReviewApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\tiago_qr6vbzw\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.3\\microsoft.aspnetcore.app.internal.assets.10.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
