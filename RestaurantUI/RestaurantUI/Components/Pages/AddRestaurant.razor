@@ -1,0 +1,21 @@
+@page "/add"
+@inject FakeRestaurantService Service
+@inject NavigationManager Nav
+
+<h3>Add Restaurant</h3>
+
+<input placeholder="Name" @bind="restaurant.Name" />
+<input placeholder="Cuisine" @bind="restaurant.Cuisine" />
+<input placeholder="Location" @bind="restaurant.Location" />
+
+<button @onclick="Add">Save</button>
+
+@code {
+    private Restaurant restaurant = new Restaurant();
+
+    void Add()
+    {
+        Service.Add(restaurant);
+        Nav.NavigateTo("/restaurants");
+    }
+}

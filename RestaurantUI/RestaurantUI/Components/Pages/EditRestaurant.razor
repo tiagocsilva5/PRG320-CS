@@ -1,0 +1,30 @@
+@page "/edit/{Id:int}"
+@inject FakeRestaurantService Service
+@inject NavigationManager Nav
+
+<h3>Edit Restaurant</h3>
+
+@if (restaurant != null)
+{
+    <input @bind="restaurant.Name" />
+    <input @bind="restaurant.Cuisine" />
+    <input @bind="restaurant.Location" />
+
+    <button @onclick="Update">Update</button>
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private Restaurant restaurant;
+
+    protected override void OnInitialized()
+    {
+        restaurant = Service.GetById(Id);
+    }
+
+    void Update()
+    {
+        Service.Update(restaurant);
+        Nav.NavigateTo("/restaurants");
+    }
+}

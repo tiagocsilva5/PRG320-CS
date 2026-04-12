@@ -1,0 +1,23 @@
+@page "/review/{Id:int}"
+@inject FakeRestaurantService Service
+@inject NavigationManager Nav
+
+<h3>Add Review</h3>
+
+<input placeholder="Reviewer" @bind="review.Reviewer" />
+<input placeholder="Comment" @bind="review.Comment" />
+<input type="number" placeholder="Rating" @bind="review.Rating" />
+
+<button @onclick="Save">Submit</button>
+
+@code {
+    [Parameter] public int Id { get; set; }
+
+    private Review review = new Review();
+
+    void Save()
+    {
+        Service.AddReview(Id, review);
+        Nav.NavigateTo("/restaurants");
+    }
+}

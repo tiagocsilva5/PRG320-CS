@@ -1,0 +1,63 @@
+@page "/restaurants"
+@inject FakeRestaurantService Service
+@inject NavigationManager Nav
+
+<h3>Restaurants</h3>
+
+<button @onclick="GoToAdd">Add Restaurant</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Cuisine</th>
+            <th>Location</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in restaurants)
+        {
+            <tr>
+                <td>@r.Name</td>
+                <td>@r.Cuisine</td>
+                <td>@r.Location</td>
+                <td>
+                    <button @onclick="() => Edit(r.Id)">Edit</button>
+                    <button @onclick="() => Delete(r.Id)">Delete</button>
+                    <button @onclick="() => AddReview(r.Id)">Add Review</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<Restaurant> restaurants;
+
+    protected override void OnInitialized()
+    {
+        restaurants = Service.GetAll();
+    }
+
+    void Delete(int id)
+    {
+        Service.Delete(id);
+        restaurants = Service.GetAll();
+    }
+
+    void Edit(int id)
+    {
+        Nav.NavigateTo($"/edit/{id}");
+    }
+
+    void AddReview(int id)
+    {
+        Nav.NavigateTo($"/review/{id}");
+    }
+
+    void GoToAdd()
+    {
+        Nav.NavigateTo("/add");
+    }
+}

@@ -1,8 +1,11 @@
-public class Review
+namespace RestaurantUI_Week6.Models
 {
-    public int Id { get; set; }
-    public int RestaurantId { get; set; }
-    public string ReviewerName { get; set; }
-    public int Rating { get; set; }
-    public string Comment { get; set; }
+    public class Review
+    {
+        public int Id { get; set; }
+        public int RestaurantId { get; set; }
+        public string ReviewerName { get; set; }
+        public int Rating { get; set; }
+        public string Comment { get; set; }
+    }
 }
