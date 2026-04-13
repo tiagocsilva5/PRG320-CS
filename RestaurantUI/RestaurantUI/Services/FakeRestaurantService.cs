@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+namespace RestaurantUI.Services;
 
 public class FakeRestaurantService
 {
