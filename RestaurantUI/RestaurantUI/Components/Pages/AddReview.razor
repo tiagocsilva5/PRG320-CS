@@ -1,23 +1,45 @@
 @page "/review/{Id:int}"
+@rendermode InteractiveServer
 @inject FakeRestaurantService Service
 @inject NavigationManager Nav
 
-<h3>Add Review</h3>
+<h3>Add Review for @restaurant?.Name</h3>
 
-<input placeholder="Reviewer" @bind="review.Reviewer" />
-<input placeholder="Comment" @bind="review.Comment" />
-<input type="number" placeholder="Rating" @bind="review.Rating" />
+<div>
+    <label>Reviewer</label>
+    <input @bind="review.Reviewer" />
+</div>
+<div>
+    <label>Comment</label>
+    <input @bind="review.Comment" />
+</div>
+<div>
+    <label>Rating (1-5)</label>
+    <input type="number" min="1" max="5" @bind="review.Rating" />
+</div>
 
-<button @onclick="Save">Submit</button>
+<button @onclick="Submit">Submit</button>
+<button @onclick="Cancel">Cancel</button>
 
 @code {
     [Parameter] public int Id { get; set; }
 
+    private Restaurant restaurant;
     private Review review = new Review();
 
-    void Save()
+    protected override void OnParametersSet()
+    {
+        restaurant = Service.GetById(Id);
+    }
+
+    void Submit()
     {
         Service.AddReview(Id, review);
+        Nav.NavigateTo($"/reviews/{Id}");
+    }
+
+    void Cancel()
+    {
         Nav.NavigateTo("/restaurants");
     }
 }

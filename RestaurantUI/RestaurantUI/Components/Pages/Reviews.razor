@@ -1,0 +1,61 @@
+@page "/reviews/{Id:int}"
+@rendermode InteractiveServer
+@inject FakeRestaurantService Service
+@inject NavigationManager Nav
+
+<h3>Reviews for @restaurant?.Name</h3>
+
+<button @onclick='() => Nav.NavigateTo("/restaurants")'>Back</button>
+
+@if (restaurant?.Reviews.Count == 0)
+{
+    <p>No reviews yet.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Reviewer</th>
+                <th>Comment</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var review in restaurant.Reviews)
+            {
+                <tr>
+                    <td>@review.Reviewer</td>
+                    <td>@review.Comment</td>
+                    <td>@review.Rating / 5</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+
+    private Restaurant restaurant;
+
+    protected override void OnParametersSet()
+    {
+        restaurant = Service.GetById(Id);
+    }
+}
+
+@if (restaurant == null)
+{
+    <p>Restaurant not found.</p>
+}
+else if (restaurant.Reviews.Count == 0)
+{
+    <p>No reviews yet.</p>
+}
+else
+{
+    <table class="table">
+        ...
+    </table>
+}

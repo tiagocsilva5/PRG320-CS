@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+namespace RestaurantUI.Models;
 
 public class Restaurant
 {

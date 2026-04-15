@@ -1,0 +1,45 @@
+@page "/reviews"
+@rendermode InteractiveServer
+@inject FakeRestaurantService Service
+
+<h3>All Reviews</h3>
+
+@if (!allReviews.Any())
+{
+    <p>No reviews yet.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Restaurant</th>
+                <th>Reviewer</th>
+                <th>Comment</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var (restaurant, review) in allReviews)
+            {
+                <tr>
+                    <td>@restaurant.Name</td>
+                    <td>@review.Reviewer</td>
+                    <td>@review.Comment</td>
+                    <td>@review.Rating / 5</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<(Restaurant, Review)> allReviews = new();
+
+    protected override void OnParametersSet()
+    {
+        allReviews = Service.GetAll()
+            .SelectMany(r => r.Reviews.Select(rev => (r, rev)))
+            .ToList();
+    }
+}
